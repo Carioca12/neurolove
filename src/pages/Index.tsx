@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Headphones, Heart, Sparkles, Shield, Clock, Check, ChevronDown, Star } from "lucide-react";
+import { Headphones, Heart, Sparkles, Shield, Clock, Check, ChevronDown, Star, X, Mail, Banknote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -8,10 +8,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const CHECKOUT_URL = "#checkout";
-
-const CTA = ({ className = "", label = "QUERO OUVIR A FREQUÊNCIA" }: { className?: string; label?: string }) => (
-  <a href={CHECKOUT_URL} className={className}>
+const CTA = ({ className = "", label = "QUERO OUVIR A FREQUÊNCIA", href = "#oferta" }: { className?: string; label?: string; href?: string }) => (
+  <a href={href} className={className}>
     <Button
       size="lg"
       className="bg-gradient-cta text-accent-foreground shadow-cta hover:opacity-95 hover:scale-[1.02] transition-all rounded-full px-8 py-6 text-base font-semibold tracking-wide animate-pulse-soft"
@@ -62,7 +60,7 @@ const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden">
+    <main className="min-h-screen bg-[#0A0B10] overflow-x-hidden">
       {/* Scroll progress */}
       <div
         className="fixed top-0 left-0 h-[3px] bg-gradient-cta z-50 transition-[width] duration-150"
@@ -70,343 +68,303 @@ const Index = () => {
       />
 
       {/* HERO */}
-      <section ref={heroRef} className="bg-gradient-hero pt-16 pb-24 md:pt-24 md:pb-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-xs font-medium mb-8 animate-fade-up">
-            <Sparkles className="h-3.5 w-3.5" />
-            Áudios guiados de 5 minutos
-          </div>
+      <section ref={heroRef} className="bg-[#0A0B10] pt-16 pb-24 md:pt-24 md:pb-32 px-6 text-white min-h-[90vh] flex items-center justify-center">
+        <div className="max-w-4xl mx-auto text-center w-full">
+          <h2 className="text-lg md:text-2xl font-bold bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent animate-fade-up mb-2">
+            Aprenda a ativar o gatilho mental da atração amorosa 5 minutos
+          </h2>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] text-balance text-primary animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            5 minutos por dia para você se reencontrar depois do que doeu.
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-balance text-white animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            E faça o seu ex voltar correndo para você
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            A NeuroLove é uma série de áudios guiados criados para acolher o luto de um relacionamento,
-            acalmar a ansiedade da espera e te devolver a clareza para tomar decisões a partir de você — não da saudade.
+          <p className="mt-6 text-base md:text-lg text-gray-300 max-w-3xl mx-auto text-balance animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            Você tеrá еlе na palma da sua mãо. Quando você ativar esse gatilho da atração аmоrоѕа no mental do seu ex, vai ver você não sair da cabeça dele nem por 1 minuto
           </p>
 
-          <div className="mt-10 flex flex-col items-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <video
+              src="/videos/vsl.mp4"
+              controls
+              className="w-full max-w-3xl mx-auto rounded-xl shadow-2xl border-4 border-white/10 aspect-video bg-black/50"
+              controlsList="nodownload"
+            />
+          </div>
+
+          <div className="mt-10 flex flex-col items-center gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
             <CTA />
-            <p className="text-xs text-muted-foreground flex items-center gap-2">
-              <Shield className="h-3.5 w-3.5" /> Acesso imediato · Garantia de 30 dias
+            <img src="/uploads/5 estrelas.png" alt="Avaliações 5 estrelas" className="h-6 mt-2" />
+          </div>
+        </div>
+      </section>
+
+      {/* INTRO EMOCIONAL / SEGUNDA PARTE */}
+      <section className="py-20 md:py-28 px-6 bg-[#0A0B10] text-gray-300">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center reveal">
+          <div className="space-y-6 text-lg md:text-xl leading-relaxed font-light">
+            <p>
+              Você já tentou de tudo, contato zero, mensagens estratégicas, livros de autoajuda, ebooks cheios de teoria e nada funcionou de verdade. Eu sei exatamente como você se sente, porque eu também passei por tudo isso. Foi só quando descobri essa estratégia que tudo mudou. Ela age de forma tão poderosa que cria uma vantagem real na sua vida amorosa, fazendo com que você seja naturalmente vista, notada e cortejada pelo homem que deseja sem esforço, sem jogos e sem depender de nenhuma técnica vazia.
+            </p>
+            <p>
+              Essa não é mais uma promessa bonita sem resultado. É um método que já transformou a vida de mulheres reais, que assim como você estavam cansadas de perder tempo com o que não funciona. Se você quer ser a mulher que desperta atenção genuína e reconquista o poder de atrair o homem certo, chegou a hora de dar esse passo. Clique agora e descubra como essa melodia pode mudar o seu jogo — antes que você perca maisum dia esperando que algo mude sozinho.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <img src="/uploads/section-below-vsl.png" alt="Mulher ouvindo melodia" className="w-full max-w-md md:max-w-lg object-contain" />
+          </div>
+        </div>
+      </section>
+
+      {/* TERCEIRA PARTE / PROBLEMA */}
+      <section className="py-20 md:py-28 px-6 bg-[#0A0B10] text-gray-300">
+        <div className="max-w-6xl mx-auto reveal">
+          <div className="text-center mb-16">
+            <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent mb-4">
+              Se seu relacionamento está por um fio, ou ele te abandonu...
+            </h3>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white text-balance">
+              Eu sei exatamente como você se sente...<br className="hidden md:block" /> eu já passei por isso!
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start mt-12">
+            <div className="flex justify-center">
+              <img src="/uploads/woman.png" alt="Mulher pensativa" className="w-full max-w-md object-contain" />
+            </div>
+
+            <div className="space-y-6 text-[17px] md:text-lg leading-relaxed font-light">
+              <p>
+                Você já se perguntou por que suas amigas vivem relacionamentos incríveis pedidos de casamento, flores, viagens enquanto o seu está cheio de brigas e desentendimentos?
+              </p>
+              <p>
+                Eu também me fiz essa pergunta, e depois de tentar contato zero, mensagens estratégicas, livros de autoajuda e ebooks de teoria vazia, descobri o verdadeiro motivo: seu campo energético está desalinhado.
+              </p>
+              <p>
+                É exatamente isso que aneurolove corrige ela ativa o interruptor da atração amorosa em você, realinhando sua energia e fazendo com que você seja naturalmente vista, desejada e cortejada, seja por um ex, por alguém que você quer conquistar ou para salvar um casamento que parece estar por um fio.
+              </p>
+              <p>
+                Menos de 2% das mulheres sabem que isso existe e quem descobre passa a ter uma vantagem real nos relacionamentos, quase como um "controle" sobre a atração masculina.
+              </p>
+              <p>
+                Chega de perder tempo com o que não funciona. Se você quer que ele te mande mensagem, volte, ou finalmente te veja como a mulher que você é, essa frequência pode mudar isso de forma quase imediata.  Clique agora, ouça a Melodia do Amor e ative esse interruptor hoje mesmo — antes de perder mais um dia esperando que algo mude por conta própria.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <CTA />
+          </div>
+        </div>
+      </section>
+
+      {/* QUARTA PARTE / RESULTADOS */}
+      <section className="py-20 md:py-28 px-6 bg-[#0A0B10] relative overflow-hidden">
+
+        <div className="max-w-7xl mx-auto relative z-10 reveal text-center">
+          <p className="font-bold text-lg md:text-xl mb-4 bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
+            + de 6 mil mulheres usam essa frequência
+          </p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-16">
+            Melhor do que falar... é mostrar os resultados
+          </h2>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
+            {/* Left Image */}
+            <div className="w-full md:w-1/3 flex justify-center md:justify-end">
+              <img src="/uploads/resultado-esquerda.png" alt="Depoimento Esquerda" className="w-full max-w-[320px] rounded-xl shadow-2xl hover:scale-105 transition-transform" />
+            </div>
+
+            {/* Center Video */}
+            <div className="w-full md:w-1/3 flex justify-center z-20">
+              <video
+                src="/videos/ctv 2.mp4"
+                controls
+                className="w-full max-w-[340px] rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] border-2 border-white/10 relative scale-110"
+              />
+            </div>
+
+            {/* Right Image */}
+            <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+              <img src="/uploads/resultado-direita.png" alt="Depoimento Direita" className="w-full max-w-[320px] rounded-xl shadow-2xl hover:scale-105 transition-transform" />
+            </div>
+          </div>
+
+          <div className="mt-24 max-w-4xl mx-auto">
+            <p className="text-gray-300 text-[17px] md:text-xl leading-relaxed font-light text-balance">
+              Você só precisa de 5 mіnutоѕ por dia, para transformar completamente o seu relacionamento. Com a neurolove, sua frequência energética se eleva tão rapidamente que, mesmo que ele esteja com outra pessoa, ele sentirá que você é a mulher da vida dele e voltará para os seus braços. Clique agora, ouça o NeuroLove e ative esse interruptor hoje mesmo.
             </p>
           </div>
         </div>
       </section>
 
-      {/* INTRO EMOCIONAL */}
-      <section className="py-20 md:py-28 px-6">
-        <div className="max-w-2xl mx-auto reveal">
-          <p className="text-lg md:text-xl leading-relaxed text-foreground/90">
-            Você já tentou de tudo. Contato zero, conselhos de amigas, livros de autoajuda,
-            ebooks cheios de teoria — e mesmo assim, na hora em que a casa fica em silêncio,
-            o pensamento volta para a mesma pessoa.
-          </p>
-          <p className="mt-6 text-lg md:text-xl leading-relaxed text-foreground/90">
-            Eu entendo, porque também passei por isso. E descobri uma coisa simples:
-            o que precisa mudar primeiro não é ele, é o ruído dentro de você. Enquanto a sua mente está em colapso,
-            nenhuma estratégia funciona — nem para reconquistar, nem para seguir em frente.
-          </p>
-          <p className="mt-6 text-lg md:text-xl leading-relaxed text-foreground/90">
-            A NeuroLove não promete controlar ninguém. Ela te devolve algo muito mais valioso:
-            <span className="font-semibold text-primary"> a sua própria presença</span>. E é a partir daí que
-            tudo o que vem depois — voltar, seguir, escolher — passa a fazer sentido de verdade.
-          </p>
+      {/* QUINTA PARTE / QUEBRA-CABEÇA */}
+      <section className="py-20 md:py-28 px-6 bg-[#0A0B10] text-gray-300 relative overflow-hidden">
+
+        <div className="max-w-4xl mx-auto relative z-10 text-center reveal">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-balance leading-tight">
+            Essa Melodia do Amor é a peça do<br className="hidden md:block" /> quebra-cabeça que faltava no seu relacionamento.
+          </h2>
+
+          <div className="bg-[#12141a]/80 backdrop-blur-sm border border-white/5 rounded-[2rem] p-8 md:p-12 text-left max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
+
+            <ul className="space-y-6 relative z-10">
+              {[
+                "Chega ouvir conselhos das amigas para esquecê-lo",
+                "De achar que ele não vai voltar",
+                "De perder tempo com amarrações",
+                "De perder tempo e dinheiro comprando ebooks com dicas vazias",
+                "De usar frases prontas para reconquistar"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-4 text-gray-300 text-[15px] md:text-[17px]">
+                  <X className="h-5 w-5 text-red-500 shrink-0 stroke-[3]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* PROBLEMA */}
-      <section className="py-20 md:py-28 px-6 bg-secondary">
-        <div className="max-w-3xl mx-auto text-center reveal">
-          <h2 className="text-3xl md:text-5xl font-semibold text-primary text-balance">
-            Se o seu relacionamento está por um fio — ou ele já se afastou — você não está sozinha.
+      {/* SEXTA PARTE / PASSO A PASSO */}
+      <section className="py-20 md:py-28 px-6 bg-[#0A0B10]">
+        <div className="max-w-5xl mx-auto text-center reveal">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-16">
+            Veja como é simples...
           </h2>
-          <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Você se pergunta por que parece que está sempre dando mais. Por que dorme mal. Por que checa o celular antes de qualquer coisa.
-            Por que parece que perdeu o eixo. Não é fraqueza. É um sistema nervoso esgotado pedindo cuidado.
-          </p>
 
-          <div className="grid md:grid-cols-3 gap-4 mt-12 text-left">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
-              "Pensamento que não desliga sobre a pessoa",
-              "Ansiedade no peito antes de dormir",
-              "Sensação de ter perdido a si mesma",
-            ].map((t) => (
-              <div key={t} className="bg-card p-6 rounded-2xl shadow-soft">
-                <Heart className="h-5 w-5 text-accent mb-3" />
-                <p className="text-sm text-foreground/80">{t}</p>
+              {
+                icon: Mail,
+                title: "Passo #01",
+                text: "Após receber a neurolove, você irá pegar o seus fones de ouvido, e ouvir uma vez ao acordar e outra antes de dormir"
+              },
+              {
+                icon: Headphones,
+                title: "Passo #02",
+                text: "São apenas 5 minutos por dia para captar a frequência individualmente."
+              },
+              {
+                icon: Banknote,
+                title: "Passo #03",
+                text: "Em poucos dias, você notará os resultados: ele vai te mandar uma mensagem, aparecer na sua porta, e até o jeito que as pessoas ao redor te olham será completamente diferente."
+              }
+            ].map((step, i) => (
+              <div key={i} className="bg-[#0c0d12] border border-white/5 rounded-3xl p-8 md:p-10 text-left hover:-translate-y-1 transition-transform duration-300 shadow-2xl">
+                <step.icon className="h-8 w-8 md:h-10 md:w-10 text-red-500 mb-6" />
+                <h3 className="text-white text-xl md:text-2xl font-bold mb-4">{step.title}</h3>
+                <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+                  {step.text}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* MÉTODO */}
-      <section className="py-20 md:py-28 px-6">
-        <div className="max-w-3xl mx-auto reveal">
-          <p className="text-sm uppercase tracking-[0.2em] text-accent font-semibold text-center mb-4">O método</p>
-          <h2 className="text-3xl md:text-5xl font-semibold text-primary text-center text-balance">
-            Áudios guiados que trabalham com você, no tempo do seu sistema nervoso.
-          </h2>
-          <p className="mt-8 text-lg leading-relaxed text-foreground/85">
-            Cada áudio da NeuroLove combina respiração guiada, frequências sonoras suaves e narrativa de
-            acolhimento, em sessões de 5 minutos pensadas para caber no seu dia mesmo nos momentos mais difíceis.
-            Você ouve ao acordar e antes de dormir — e em poucos dias começa a perceber a diferença na forma como
-            você reage ao silêncio, às memórias e à saudade.
-          </p>
-          <p className="mt-6 text-lg leading-relaxed text-foreground/85">
-            Não é mágica, não é manipulação, não é controle sobre ninguém. É um treino curto, diário e gentil
-            para você voltar a habitar a sua vida com clareza — e, a partir daí, decidir o que faz sentido.
-          </p>
-        </div>
-      </section>
-
-      {/* BENEFÍCIOS */}
-      <section className="py-20 md:py-28 px-6 bg-gradient-warm">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-semibold text-primary text-center text-balance reveal">
-            O que muda dentro de você nas primeiras semanas
-          </h2>
-          <div className="grid md:grid-cols-2 gap-5 mt-14">
-            {[
-              { t: "Sono mais profundo", d: "Dormir sem o loop mental que rouba suas noites." },
-              { t: "Menos reatividade", d: "Mais espaço entre o que sente e como você responde." },
-              { t: "Autoestima reconstruída", d: "Voltar a se reconhecer como protagonista da própria história." },
-              { t: "Clareza para decidir", d: "Distinguir o que é saudade do que é, de fato, amor." },
-              { t: "Energia de volta", d: "Acordar sem o peso emocional dominando o dia." },
-              { t: "Presença real", d: "Estar em quem você é antes de pensar em estar com alguém." },
-            ].map((b) => (
-              <div key={b.t} className="reveal bg-card p-7 rounded-2xl shadow-soft flex gap-4">
-                <div className="h-10 w-10 shrink-0 rounded-full bg-gradient-cta flex items-center justify-center">
-                  <Check className="h-5 w-5 text-accent-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary text-lg">{b.t}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">{b.d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-14 reveal">
-            <CTA />
-          </div>
-        </div>
-      </section>
-
-      {/* COMO FUNCIONA */}
-      <section className="py-20 md:py-28 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-semibold text-primary text-center text-balance reveal">
-            Veja como é simples
-          </h2>
-          <p className="text-center text-muted-foreground mt-4 reveal">Apenas 5 minutos por dia.</p>
-
-          <div className="mt-16 space-y-8">
-            {[
-              {
-                n: "01",
-                t: "Coloque os fones",
-                d: "Após receber a NeuroLove, separe seus fones e escolha dois momentos do seu dia: ao acordar e antes de dormir.",
-              },
-              {
-                n: "02",
-                t: "Ouça por 5 minutos",
-                d: "Cada sessão é curta de propósito. Você não precisa de força de vontade — só presença pelo tempo de uma música.",
-              },
-              {
-                n: "03",
-                t: "Sinta a diferença em poucos dias",
-                d: "Você vai notar primeiro em você: sono melhor, mente mais quieta, decisões mais claras. O que vem depois é consequência.",
-              },
-            ].map((s, i) => (
-              <div key={s.n} className="reveal flex gap-6 md:gap-10 items-start" style={{ transitionDelay: `${i * 80}ms` }}>
-                <div className="font-serif text-5xl md:text-7xl font-semibold text-accent/30 leading-none shrink-0" style={{ fontFamily: "Fraunces, serif" }}>
-                  {s.n}
-                </div>
-                <div className="pt-2 md:pt-4">
-                  <h3 className="text-xl md:text-2xl font-semibold text-primary">{s.t}</h3>
-                  <p className="mt-2 text-foreground/80 leading-relaxed">{s.d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROVA SOCIAL */}
-      <section className="py-20 md:py-28 px-6 bg-secondary">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-center text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-4 reveal">Histórias reais</p>
-          <h2 className="text-3xl md:text-5xl font-semibold text-primary text-center text-balance reveal">
-            Mais do que palavras — o que mulheres relatam depois de algumas semanas
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-14">
-            {[
-              {
-                q: "Voltei a dormir a noite inteira na primeira semana. Foi isso que me devolveu energia para tomar as decisões que eu precisava tomar.",
-                n: "Camila, 32",
-              },
-              {
-                q: "Não esperava chorar logo no segundo áudio. Era um peso que eu carregava há meses sem perceber. Hoje me sinto mais leve.",
-                n: "Renata, 28",
-              },
-                            {
-                q: "O que mudou não foi ele, fui eu. E quando eu mudei, tudo no meu redor começou a mudar junto. É de dentro para fora mesmo.",
-                n: "Larissa, 39",
-              },
-            ].map((d) => (
-              <div key={d.n} className="reveal bg-card p-7 rounded-2xl shadow-soft">
-                <div className="flex gap-0.5 text-accent mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-foreground/85 leading-relaxed text-[15px]">"{d.q}"</p>
-                <p className="mt-5 text-sm font-semibold text-primary">— {d.n}</p>
-              </div>
-            ))}
+      {/* SÉTIMA PARTE / OFERTA FINAL */}
+      <section id="oferta" className="py-20 md:py-28 px-6 bg-[#0A0B10]">
+        <div className="max-w-4xl mx-auto reveal">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+              Promoção válida até<br />Terça-Feira, 5 de Maio de 2026
+            </h2>
           </div>
 
-          <p className="text-center text-xs text-muted-foreground mt-10 reveal">
-            Depoimentos individuais. Resultados variam de pessoa para pessoa e dependem da prática consistente.
-          </p>
-        </div>
-      </section>
-
-      {/* OFERTA */}
-      <section id="oferta" className="py-20 md:py-28 px-6 bg-gradient-warm">
-        <div className="max-w-2xl mx-auto reveal">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold">
-              <Clock className="h-3.5 w-3.5" />
-              Oferta válida por tempo limitado
-            </div>
-            <p className="mt-3 text-sm text-muted-foreground">Promoção válida até terça-feira, 5 de maio de 2026</p>
-          </div>
-
-          <div className="bg-card rounded-3xl shadow-soft overflow-hidden border border-border">
-            <div className="bg-primary text-primary-foreground p-8 text-center">
-              <h3 className="text-2xl md:text-3xl font-semibold">NeuroLove — Coleção Completa</h3>
-              <p className="text-primary-foreground/70 mt-2 text-sm">Acesso imediato após o pagamento</p>
+          <div className="bg-[#12141a] rounded-[2.5rem] shadow-2xl overflow-hidden max-w-xl mx-auto border border-white/5 relative">
+            <div className="pt-12 pb-8 flex justify-center px-6">
+              <img src="/uploads/promocao-melodia-fones.png" alt="Produto" className="w-full max-w-[320px] md:max-w-[400px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
             </div>
 
-            <div className="p-8 md:p-10">
-              <ul className="space-y-3 mb-8">
+            <div className="px-8 md:px-10 pb-10">
+              <ul className="space-y-4 mb-10">
                 {[
-                  "Áudio guia: âncora emocional para os primeiros dias difíceis",
-                  "Áudio guia: acolhimento do luto amoroso",
-                  "Áudio guia: reconstrução da autoestima",
-                  "Áudio guia: clareza para decidir com calma",
-                  "Áudio guia: silêncio mental para dormir",
-                  "Áudio guia: reencontro consigo mesma",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 text-foreground/85 text-[15px]">
-                    <Check className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                    <span>{item}</span>
+                  "Melodia do amor para trazer ele de volta",
+                  "Melodia para atrair o seu par perfeito",
+                  "Melodia da atração amorosa",
+                  "Melodia restabelecendo a confiança",
+                  "Melodia do encantamento, onde ele não terá mais olhos para outras",
+                  "Melodia Neutralizadora de emoções negativas, onde todos os seus sentimentos e memórias negativas envolvendo vocês serão ELIMINADOS",
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-4 text-gray-300 text-[16px] md:text-[18px] leading-relaxed">
+                    <Check className="h-6 w-6 text-red-500 shrink-0 stroke-[3] mt-0.5" />
+                    <span className="leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="border-t border-border pt-8 text-center">
-                <p className="text-sm text-muted-foreground">por apenas</p>
-                <p className="text-5xl md:text-6xl font-semibold text-primary mt-2" style={{ fontFamily: "Fraunces, serif" }}>
+              <div className="text-center mt-8">
+                <p className="text-gray-400 font-medium text-lg mb-1">por apenas</p>
+                <p className="text-5xl md:text-7xl font-extrabold text-white mb-2 tracking-tight">
                   R$ 57,00
                 </p>
-                <p className="text-muted-foreground mt-2">ou 12x de R$ 5,89</p>
+                <p className="text-gray-400 text-base md:text-lg mb-10">ou 12x de R$ 5,89</p>
 
-                <div className="mt-8">
-                  <CTA className="inline-block" />
-                </div>
+                <CTA href="https://pay.cakto.com.br/6vupxvo_873418" className="w-full block [&>button]:w-full" />
 
-                <div className="mt-6 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                  <Shield className="h-3.5 w-3.5" />
-                  Acesso imediato após o pagamento
-                </div>
+                <img src="/uploads/caktopay.png" alt="Formas de pagamento" className="w-full max-w-[280px] md:max-w-[360px] mx-auto mt-8 opacity-80 hover:opacity-100 transition-opacity" />
               </div>
             </div>
           </div>
 
           {/* Garantia */}
-          <div className="mt-10 bg-card border border-border rounded-2xl p-8 flex gap-5 items-start reveal">
-            <div className="h-14 w-14 shrink-0 rounded-full bg-accent/10 flex items-center justify-center">
-              <Shield className="h-7 w-7 text-accent" />
+          <div className="mt-24 flex flex-col md:flex-row gap-10 items-center justify-center max-w-4xl mx-auto">
+            <div className="w-56 md:w-64 shrink-0 flex justify-center">
+              <img src="/uploads/30-dias-garantia.png" alt="30 Dias de Garantia" className="w-full max-w-[220px] md:max-w-[250px] object-contain" />
             </div>
-            <div>
-              <h4 className="font-semibold text-primary text-lg">30 dias de garantia incondicional</h4>
-              <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
-                Experimente por 30 dias. Se em qualquer momento você sentir que a NeuroLove não é para você,
-                basta enviar um e-mail e devolvemos 100% do valor — sem perguntas, sem burocracia.
+            <div className="text-center md:text-left">
+              <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-5">30 dias de garantia</h3>
+              <p className="text-gray-300 text-[17px] md:text-lg leading-relaxed">
+                Eu já mostrei que isso pode mudar o seu relacionamento e também mostrei vários depoimentos de pessoas do qual eu ensinei a frequência e elas tiveram seus relacionamentos transformados
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* FAQ */}
-      <section className="py-20 md:py-28 px-6">
-        <div className="max-w-2xl mx-auto reveal">
-          <h2 className="text-3xl md:text-5xl font-semibold text-primary text-center text-balance">
-            Dúvidas frequentes
-          </h2>
-
-          <Accordion type="single" collapsible className="mt-12">
-            {[
-              {
-                q: "Como vou acessar o produto?",
-                a: "Logo após a confirmação do pagamento, você recebe por e-mail o acesso à plataforma onde os áudios ficam disponíveis para ouvir online ou baixar.",
-              },
-              {
-                q: "É realmente seguro?",
-                a: "Sim. O pagamento é processado por uma plataforma certificada com criptografia, e seus dados nunca são compartilhados.",
-              },
-              {
-                q: "Quanto tempo eu tenho de garantia?",
-                a: "Você tem 30 dias de garantia incondicional. Se não fizer sentido para você, devolvemos integralmente.",
-              },
-              {
-                q: "Preciso pagar algum valor mensal?",
-                a: "Não. O pagamento é único. Você acessa a coleção completa sem mensalidades.",
-              },
-              {
-                q: "A NeuroLove substitui terapia?",
-                a: "Não. A NeuroLove é uma ferramenta de bem-estar emocional e não substitui acompanhamento psicológico ou médico. Se você está em sofrimento intenso, recomendamos buscar um profissional.",
-              },
-            ].map((f, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-b border-border">
-                <AccordionTrigger className="text-left text-base md:text-lg font-medium text-primary hover:no-underline py-5">
-                  {f.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-foreground/75 text-[15px] leading-relaxed pb-5">
-                  {f.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="py-24 md:py-32 px-6 bg-primary text-primary-foreground text-center">
-        <div className="max-w-2xl mx-auto reveal">
-          <h2 className="text-3xl md:text-5xl font-semibold text-balance">
-            5 minutos por dia. A primeira pessoa a voltar é você.
-          </h2>
-          <p className="mt-6 text-primary-foreground/75 text-lg">
-            Comece hoje. Em uma semana você vai olhar para trás e perceber o quanto já mudou.
-          </p>
-          <div className="mt-10">
-            <CTA />
+          {/* FAQ */}
+          <div className="mt-32 max-w-4xl mx-auto">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-10 text-center">Dúvidas Frequentes</h3>
+            <div className="bg-[#12141a] border border-white/5 rounded-3xl p-6 md:p-10 shadow-2xl">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1" className="border-b border-white/5">
+                  <AccordionTrigger className="text-white hover:text-white/80 hover:no-underline text-lg md:text-xl font-medium py-5 text-left">
+                    Como vou acessar o produto?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-400 text-base md:text-lg leading-relaxed pl-8">
+                    Assim que a compra for concretizada você receberá em seu e-mail todos os dados de acesso.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2" className="border-b border-white/5">
+                  <AccordionTrigger className="text-white hover:text-white/80 hover:no-underline text-lg md:text-xl font-medium py-5 text-left">
+                    É realmente seguro?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-400 text-base md:text-lg leading-relaxed pl-8">
+                    Sim, nosso sistema de pagamento é o mais seguro e utilizado do Brasil. (Cakto)
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3" className="border-b border-white/5">
+                  <AccordionTrigger className="text-white hover:text-white/80 hover:no-underline text-lg md:text-xl font-medium py-5 text-left">
+                    Quanto tempo eu tenho de garantia?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-400 text-base md:text-lg leading-relaxed pl-8">
+                    Garantia de Satisfação de 7 dias, se o material não lhe atender você pode solicitar reembolso do pagamento
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4" className="border-b-0">
+                  <AccordionTrigger className="text-white hover:text-white/80 hover:no-underline text-lg md:text-xl font-medium py-5 text-left">
+                    Preciso pagar algum valor mensal?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-400 text-base md:text-lg leading-relaxed pl-8">
+                    Não, o pagamento é feito apenas uma vez.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </div>
-          <p className="mt-6 text-xs text-primary-foreground/60">
-            Acesso imediato · Garantia de 30 dias · Pagamento único
-          </p>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="py-10 px-6 text-center text-xs text-muted-foreground border-t border-border">
+      <footer className="py-10 px-6 text-center text-xs text-muted-foreground bg-[#0A0B10] border-t border-white/5">
         NeuroLove 2025 © | Todos os direitos reservados
         <p className="mt-2 max-w-xl mx-auto">
           Este produto é uma ferramenta de bem-estar emocional e não substitui acompanhamento psicológico ou médico.
