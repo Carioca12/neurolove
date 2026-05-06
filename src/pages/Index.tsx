@@ -59,6 +59,26 @@ const Index = () => {
   const progress = useScrollProgress();
   const heroRef = useRef<HTMLDivElement>(null);
 
+  const [isVideoEnded, setIsVideoEnded] = useState(false);
+  const [maxTime, setMaxTime] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleTimeUpdate = () => {
+    if (!videoRef.current) return;
+    const currentTime = videoRef.current.currentTime;
+    
+    // Evita avançar o vídeo: se tentar pular mais de 1 segundo além do máximo assistido, volta pro máximo
+    if (currentTime > maxTime + 1) {
+      videoRef.current.currentTime = maxTime;
+    } else {
+      setMaxTime(Math.max(maxTime, currentTime));
+    }
+  };
+
+  const handleEnded = () => {
+    setIsVideoEnded(true);
+  };
+
   return (
     <main className="min-h-screen bg-[#0A0B10] overflow-x-hidden">
       {/* Scroll progress */}
@@ -84,21 +104,28 @@ const Index = () => {
 
           <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <video
+              ref={videoRef}
               src="/videos/vsl.mp4"
               controls
-              className="w-full max-w-3xl mx-auto rounded-xl shadow-2xl border-4 border-white/10 aspect-video bg-black/50"
+              className="w-full max-w-[340px] md:max-w-[400px] mx-auto rounded-2xl shadow-2xl border-4 border-white/10 aspect-[9/16] bg-black/50 object-cover"
               controlsList="nodownload"
+              onTimeUpdate={handleTimeUpdate}
+              onEnded={handleEnded}
             />
           </div>
 
-          <div className="mt-10 flex flex-col items-center gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            <CTA />
-            <img src="/uploads/5 estrelas.png" alt="Avaliações 5 estrelas" className="h-6 mt-2" />
-          </div>
+          {isVideoEnded && (
+            <div className="mt-10 flex flex-col items-center gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+              <CTA />
+              <img src="/uploads/5 estrelas.png" alt="Avaliações 5 estrelas" className="h-6 mt-2" />
+            </div>
+          )}
         </div>
       </section>
 
-      {/* INTRO EMOCIONAL / SEGUNDA PARTE */}
+      {isVideoEnded && (
+        <div className="animate-fade-up" style={{ animationDuration: "1s" }}>
+          {/* INTRO EMOCIONAL / SEGUNDA PARTE */}
       <section className="py-20 md:py-28 px-6 bg-[#0A0B10] text-gray-300">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center reveal">
           <div className="space-y-6 text-lg md:text-xl leading-relaxed font-light">
@@ -362,6 +389,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+        </div>
+      )}
 
       {/* FOOTER */}
       <footer className="py-10 px-6 text-center text-xs text-muted-foreground bg-[#0A0B10] border-t border-white/5">
@@ -372,9 +401,11 @@ const Index = () => {
       </footer>
 
       {/* Sticky mobile CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 p-3 bg-background/95 backdrop-blur border-t border-border">
-        <CTA className="block w-full [&>button]:w-full" />
-      </div>
+      {isVideoEnded && (
+        <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 p-3 bg-background/95 backdrop-blur border-t border-border">
+          <CTA className="block w-full [&>button]:w-full" />
+        </div>
+      )}
       <div className="md:hidden h-24" aria-hidden />
     </main>
   );
