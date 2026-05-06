@@ -203,10 +203,13 @@ const Index = () => {
 
             {/* Center Video */}
             <div className="w-full md:w-1/3 flex justify-center z-20">
-              <video
-                src="/videos/ctv 2.mp4"
-                controls
-                className="w-full max-w-[340px] rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] border-2 border-white/10 relative scale-110"
+              <iframe
+                src="https://www.youtube.com/embed/MsOFZ_oZicw"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full max-w-[340px] rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] border-2 border-white/10 relative scale-110 aspect-[9/16]"
               />
             </div>
 
