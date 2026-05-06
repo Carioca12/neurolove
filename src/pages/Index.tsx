@@ -20,7 +20,7 @@ const CTA = ({ className = "", label = "QUERO OUVIR A FREQUÊNCIA", href = "#ofe
   </a>
 );
 
-const useReveal = () => {
+const useReveal = (dependency?: any) => {
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver(
@@ -36,7 +36,7 @@ const useReveal = () => {
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, []);
+  }, [dependency]);
 };
 
 const useScrollProgress = () => {
@@ -55,11 +55,11 @@ const useScrollProgress = () => {
 };
 
 const Index = () => {
-  useReveal();
+  const [isVideoEnded, setIsVideoEnded] = useState(false);
+  useReveal(isVideoEnded);
   const progress = useScrollProgress();
   const heroRef = useRef<HTMLDivElement>(null);
 
-  const [isVideoEnded, setIsVideoEnded] = useState(false);
   const [maxTime, setMaxTime] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -68,8 +68,8 @@ const Index = () => {
     const video = videoRef.current;
     const currentTime = video.currentTime;
 
-    // Se o vídeo estiver a menos de meio segundo do final, considera como finalizado
-    if (video.duration && currentTime >= video.duration - 0.5) {
+    // Desbloqueia a página automaticamente após 2 minutos (120s) ou no final do vídeo
+    if (currentTime >= 120 || (video.duration && currentTime >= video.duration - 0.5)) {
       setIsVideoEnded(true);
     }
     
