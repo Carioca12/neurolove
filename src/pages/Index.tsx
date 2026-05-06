@@ -65,13 +65,21 @@ const Index = () => {
 
   const handleTimeUpdate = () => {
     if (!videoRef.current) return;
-    const currentTime = videoRef.current.currentTime;
+    const video = videoRef.current;
+    const currentTime = video.currentTime;
+
+    // Se o vídeo estiver a menos de meio segundo do final, considera como finalizado
+    if (video.duration && currentTime >= video.duration - 0.5) {
+      setIsVideoEnded(true);
+    }
     
     // Evita avançar o vídeo: se tentar pular mais de 1 segundo além do máximo assistido, volta pro máximo
-    if (currentTime > maxTime + 1) {
-      videoRef.current.currentTime = maxTime;
-    } else {
-      setMaxTime(Math.max(maxTime, currentTime));
+    if (!isVideoEnded) {
+      if (currentTime > maxTime + 1) {
+        video.currentTime = maxTime;
+      } else {
+        setMaxTime(Math.max(maxTime, currentTime));
+      }
     }
   };
 
