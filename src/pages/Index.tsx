@@ -275,7 +275,7 @@ const Index = () => {
                     </p>
                     <p className="text-gray-400 text-base md:text-lg mb-10">ou 12x de R$ 5,89</p>
 
-                    <CTA href="https://pay.cakto.com.br/6vupxvo_873418" className="w-full block [&>button]:w-full" />
+                    <CTA href="https://pay.cakto.com.br/36qohvz_876161" className="w-full block [&>button]:w-full" />
 
                     <img src="/uploads/caktopay.png" alt="Formas de pagamento" className="w-full max-w-[280px] md:max-w-[360px] mx-auto mt-8 opacity-80 hover:opacity-100 transition-opacity" />
                   </div>
