@@ -56,6 +56,15 @@ const useScrollProgress = () => {
 
 const Index = () => {
   const [isVideoEnded, setIsVideoEnded] = useState(false);
+  const [promoDate, setPromoDate] = useState("");
+
+  useEffect(() => {
+    const days = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+    const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+    const now = new Date();
+    setPromoDate(`${days[now.getDay()]}, ${now.getDate()} de ${months[now.getMonth()]} de ${now.getFullYear()}`);
+  }, []);
+
   useReveal(isVideoEnded);
   const progress = useScrollProgress();
   const heroRef = useRef<HTMLDivElement>(null);
@@ -242,7 +251,7 @@ const Index = () => {
             <div className="max-w-4xl mx-auto reveal">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
-                  Promoção válida até<br />Terça-Feira, 5 de Maio de 2026
+                  Promoção válida até<br />{promoDate}
                 </h2>
               </div>
 
