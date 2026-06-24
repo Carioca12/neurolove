@@ -273,7 +273,7 @@ const Index = () => {
                     <p className="text-5xl md:text-7xl font-extrabold text-white mb-2 tracking-tight">
                       R$ 27,99
                     </p>
-                    <p className="text-gray-400 text-base md:text-lg mb-10">ou 8x de R$ 5,47</p>
+                    <p className="text-gray-400 text-base md:text-lg mb-10">ou 6x de R$ 5,36</p>
 
                     <CTA href="https://pay.cakto.com.br/36qohvz_876161" className="w-full block [&>button]:w-full" />
 
