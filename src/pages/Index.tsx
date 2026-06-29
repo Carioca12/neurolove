@@ -55,7 +55,7 @@ const useScrollProgress = () => {
 };
 
 const Index = () => {
-  const [isVideoEnded, setIsVideoEnded] = useState(false);
+  const [isVideoEnded, setIsVideoEnded] = useState(true);
   const [promoDate, setPromoDate] = useState("");
 
   useEffect(() => {
