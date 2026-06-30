@@ -119,24 +119,10 @@ const Index = () => {
             Você tеrá еlе na palma da sua mãо. Quando você ativar esse gatilho da atração аmоrоѕа no mental do seu ex, vai ver você não sair da cabeça dele nem por 1 minuto
           </p>
 
-          <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <video
-              ref={videoRef}
-              src="/videos/vsl.mp4"
-              controls
-              className="w-full max-w-[340px] md:max-w-[400px] mx-auto rounded-2xl shadow-2xl border-4 border-white/10 aspect-[9/16] bg-black/50 object-cover"
-              controlsList="nodownload"
-              onTimeUpdate={handleTimeUpdate}
-              onEnded={handleEnded}
-            />
+          <div className="mt-10 flex flex-col items-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <CTA />
+            <img src="/uploads/5 estrelas.png" alt="Avaliações 5 estrelas" className="h-6 mt-2" />
           </div>
-
-          {isVideoEnded && (
-            <div className="mt-10 flex flex-col items-center gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <CTA />
-              <img src="/uploads/5 estrelas.png" alt="Avaliações 5 estrelas" className="h-6 mt-2" />
-            </div>
-          )}
         </div>
       </section>
 
