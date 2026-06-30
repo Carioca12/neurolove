@@ -232,6 +232,53 @@ const Index = () => {
             </div>
           </section>
 
+          {/* DEPOIMENTOS */}
+          <section className="py-20 md:py-28 px-6 bg-[#0A0B10] text-gray-300">
+            <div className="max-w-5xl mx-auto reveal">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                  Veja o que acontece quando você ativa o fio invisível...
+                </h2>
+                <p className="text-xl text-gray-400">Mulheres reais que transformaram seus relacionamentos com a Melodia do Amor</p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  {
+                    name: "Mariana S.",
+                    text: "\"Meninas, eu não acreditava. Estávamos separados há 2 meses e ele não respondia minhas mensagens. No terceiro dia ouvindo a frequência, ele me ligou querendo conversar. Estamos juntos de novo!\"",
+                    time: "Há 2 dias"
+                  },
+                  {
+                    name: "Juliana M.",
+                    text: "\"Meu casamento estava por um fio, parecia que ele nem me via mais dentro de casa. Comecei a escutar e do nada ele começou a ser carinhoso, me chamou pra sair e me deu flores. Estou em choque.\"",
+                    time: "Há 5 dias"
+                  },
+                  {
+                    name: "Camila R.",
+                    text: "\"Obrigada!! O ex que me bloqueou me desbloqueou e mandou um 'saudades'. Nunca achei que isso fosse possível. Apenas façam, funciona muito rápido.\"",
+                    time: "Há 1 semana"
+                  }
+                ].map((depoimento, i) => (
+                  <div key={i} className="bg-[#12141a] border border-white/5 rounded-3xl p-8 text-left hover:-translate-y-1 transition-transform duration-300 shadow-2xl flex flex-col">
+                    <div className="flex items-center gap-1 mb-4">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className="h-4 w-4 fill-red-500 text-red-500" />
+                      ))}
+                    </div>
+                    <p className="text-gray-300 text-sm md:text-[15px] italic mb-6 flex-grow">
+                      {depoimento.text}
+                    </p>
+                    <div className="flex justify-between items-center text-xs text-gray-500 mt-auto">
+                      <span className="font-bold text-gray-400">{depoimento.name}</span>
+                      <span>{depoimento.time}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* SÉTIMA PARTE / OFERTA FINAL */}
           <section id="oferta" className="py-20 md:py-28 px-6 bg-[#0A0B10]">
             <div className="max-w-4xl mx-auto reveal">
@@ -316,7 +363,7 @@ const Index = () => {
                         Quanto tempo eu tenho de garantia?
                       </AccordionTrigger>
                       <AccordionContent className="text-gray-400 text-base md:text-lg leading-relaxed pl-8">
-                        Garantia de Satisfação de 7 dias, se o material não lhe atender você pode solicitar reembolso do pagamento
+                        Garantia de Satisfação de 30 dias, se o material não lhe atender você pode solicitar reembolso do pagamento
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4" className="border-b-0">
