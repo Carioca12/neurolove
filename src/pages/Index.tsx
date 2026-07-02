@@ -56,6 +56,7 @@ const useScrollProgress = () => {
 
 const Index = () => {
   const [isVideoEnded, setIsVideoEnded] = useState(true);
+  const [showPromo, setShowPromo] = useState(false);
   const [promoDate, setPromoDate] = useState("");
 
   useEffect(() => {
@@ -80,6 +81,10 @@ const Index = () => {
     // Desbloqueia a página automaticamente após 2 minutos (120s) ou no final do vídeo
     if (currentTime >= 120 || (video.duration && currentTime >= video.duration - 0.5)) {
       setIsVideoEnded(true);
+    }
+
+    if (currentTime >= 135) { // 2 minutos e 15 segundos
+      setShowPromo(true);
     }
 
     // Evita avançar o vídeo: se tentar pular mais de 1 segundo além do máximo assistido, volta pro máximo
@@ -119,16 +124,25 @@ const Index = () => {
             Você tеrá еlе na palma da sua mãо. Quando você ativar esse gatilho da atração аmоrоѕа no mental do seu ex, vai ver você não sair da cabeça dele nem por 1 minuto
           </p>
 
-          <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <div className="mt-10 relative animate-fade-up max-w-[340px] md:max-w-[400px] mx-auto" style={{ animationDelay: "0.3s" }}>
             <video
               ref={videoRef}
               src="/videos/vsl.mp4"
               controls
-              className="w-full max-w-[340px] md:max-w-[400px] mx-auto rounded-2xl shadow-2xl border-4 border-white/10 aspect-[9/16] bg-black/50 object-cover"
+              className="w-full rounded-2xl shadow-2xl border-4 border-white/10 aspect-[9/16] bg-black/50 object-cover"
               controlsList="nodownload"
               onTimeUpdate={handleTimeUpdate}
               onEnded={handleEnded}
             />
+
+            {showPromo && (
+              <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 w-[90%] z-20 animate-fade-up flex flex-col items-center">
+                <div className="bg-red-600 text-white font-bold px-4 py-1 rounded-t-lg text-sm shadow-xl animate-pulse">
+                  🎁 51% OFF APLICADO
+                </div>
+                <CTA label="POR APENAS R$ 27,99" className="w-full [&>button]:w-full [&>button]:py-5 [&>button]:text-[15px] shadow-2xl" />
+              </div>
+            )}
           </div>
 
           <div className="mt-10 flex flex-col items-center gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
