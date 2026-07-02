@@ -124,7 +124,7 @@ const Index = () => {
             Você tеrá еlе na palma da sua mãо. Quando você ativar esse gatilho da atração аmоrоѕа no mental do seu ex, vai ver você não sair da cabeça dele nem por 1 minuto
           </p>
 
-          <div className="mt-10 relative animate-fade-up max-w-[340px] md:max-w-[400px] mx-auto" style={{ animationDelay: "0.3s" }}>
+          <div className="mt-10 relative animate-fade-up w-full max-w-[340px] md:max-w-[400px] mx-auto" style={{ animationDelay: "0.3s" }}>
             <video
               ref={videoRef}
               src="/videos/vsl.mp4"
@@ -136,11 +136,11 @@ const Index = () => {
             />
 
             {showPromo && (
-              <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 w-[90%] z-20 animate-fade-up flex flex-col items-center">
+              <div className="absolute bottom-16 md:bottom-20 inset-x-0 mx-auto w-[90%] z-20 animate-fade-up flex flex-col items-center">
                 <div className="bg-red-600 text-white font-bold px-4 py-1 rounded-t-lg text-sm shadow-xl animate-pulse">
                   🎁 51% OFF APLICADO
                 </div>
-                <CTA label="POR APENAS R$ 27,99" className="w-full [&>button]:w-full [&>button]:py-5 [&>button]:text-[15px] shadow-2xl" />
+                <CTA label="POR APENAS R$ 27,99" className="w-full block [&>button]:w-full [&>button]:py-5 [&>button]:text-[15px] shadow-2xl" />
               </div>
             )}
           </div>
